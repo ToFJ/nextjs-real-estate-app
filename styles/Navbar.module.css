@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  box-shadow: -13px -11px 10px 7px;
+}
+
+.text {
+  margin: 0.5rem;
+}
