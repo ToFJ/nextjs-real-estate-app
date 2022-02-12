@@ -1,11 +1,24 @@
 .nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
   font-size: 1.5rem;
-  box-shadow: -13px -11px 10px 7px;
+  width: 100%;
+  z-index: 10;
+  text-decoration: none;
 }
 
-.text {
-  margin: 0.5rem;
+.list {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.list li > a {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  .list {
+    display: none;
+  }
 }

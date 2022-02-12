@@ -1,11 +1,9 @@
-.img {
-  width: 100vw;
+.container {
+  overflow: hidden;
   height: 100vh;
-  object-fit: cover;
+  width: 100vw;
 }
 
-/* @media (min-width: 1024px) {
-  .img {
-    display: block;
-  }
-} */
+.content {
+  z-index: 10;
+}
