@@ -1,3 +1,4 @@
+import { useState } from "react";
 import startStyles from "../styles/Start.module.css";
 import { FcSearch } from "react-icons/fc";
 
@@ -12,7 +13,6 @@ const Home = () => {
             <FcSearch />
           </label>
           <input type="text" name="search" placeholder="Your desired City" />
-
           <button>Search</button>
         </div>
       </div>

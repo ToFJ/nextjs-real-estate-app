@@ -17,8 +17,52 @@
   text-decoration: none;
 }
 
+.nav button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  transform: scale(1.5);
+  cursor: pointer;
+  border: none;
+  background: none;
+  display: none;
+}
+
 @media (max-width: 1000px) {
   .list {
     display: none;
   }
+  .nav button {
+    background: none;
+    border: none;
+    display: block;
+  }
+}
+
+.open {
+  margin: 0;
+  list-style: none;
+  background-color: white;
+  height: 30rem;
+}
+
+.open li a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.open li {
+  padding: 1rem 0;
+}
+
+.nav button {
+  z-index: 10;
+}
+
+.ham {
+  color: black;
 }

@@ -1,11 +1,16 @@
-import navStyles from "../styles/Navbar.module.css";
+import { useState } from "react";
 import Link from "next/link";
+import { GiHamburgerMenu } from "react-icons/gi";
+
+import navStyles from "../styles/Navbar.module.css";
 
 const Navbar = () => {
+  const [displayMenu, setDisplayMenu] = useState(true);
+
   return (
     <header>
       <nav className={navStyles.nav}>
-        <ul className={navStyles.list}>
+        <ul className={displayMenu ? navStyles.open : navStyles.list}>
           <li>
             <Link href="/">Real Estate</Link>
           </li>
@@ -22,6 +27,9 @@ const Navbar = () => {
             <Link href="/">Get Started</Link>
           </li>
         </ul>
+        <button className={displayMenu ? navStyles.ham : ""} onClick={() => setDisplayMenu(!displayMenu)}>
+          <GiHamburgerMenu />
+        </button>
       </nav>
     </header>
   );

@@ -1,6 +1,6 @@
 .content {
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -23,7 +23,6 @@
 
 .search {
   position: relative;
-  border: 1px solid red;
 }
 
 .search input {
