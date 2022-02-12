@@ -37,7 +37,13 @@
   color: white;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
+  transition: all 150ms ease-in-out;
 }
+
+.search button:hover {
+  transform: scale(1.1);
+}
+
 @media (min-width: 1000px) {
   .search input {
     width: 35rem;

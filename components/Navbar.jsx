@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import navStyles from "../styles/Navbar.module.css";
 
 const Navbar = () => {
-  const [displayMenu, setDisplayMenu] = useState(true);
+  const [displayMenu, setDisplayMenu] = useState(false);
 
   return (
     <header>
@@ -20,12 +20,8 @@ const Navbar = () => {
           <li>
             <Link href="/">About</Link>
           </li>
-          <li>
-            <Link href="/">How It Works</Link>
-          </li>
-          <li>
-            <Link href="/">Get Started</Link>
-          </li>
+          <li>How It Works</li>
+          <li>Get Started</li>
         </ul>
         <button className={displayMenu ? navStyles.ham : ""} onClick={() => setDisplayMenu(!displayMenu)}>
           <GiHamburgerMenu />
