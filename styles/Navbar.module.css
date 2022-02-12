@@ -34,17 +34,24 @@
   cursor: pointer;
   border: none;
   background: none;
-  display: none;
+  display: block;
 }
 
 @media (max-width: 1000px) {
   .list {
     display: none;
   }
+}
+
+@media (min-width: 1000px) {
   .nav button {
-    background: none;
-    border: none;
-    display: block;
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .nav button {
+    display: none;
   }
 }
 
@@ -71,6 +78,14 @@
   z-index: 10;
 }
 
-.ham {
+.white {
   color: black;
+}
+
+.black {
+  color: white;
+}
+
+.logo {
+  font-size: 2rem;
 }

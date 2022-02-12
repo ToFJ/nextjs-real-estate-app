@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AiFillAlipayCircle } from "react-icons/ai";
 
 import navStyles from "../styles/Navbar.module.css";
 
@@ -11,8 +12,8 @@ const Navbar = () => {
     <header>
       <nav className={navStyles.nav}>
         <ul className={displayMenu ? navStyles.open : navStyles.list}>
-          <li>
-            <Link href="/">Real Estate</Link>
+          <li className={navStyles.logo}>
+            <AiFillAlipayCircle />
           </li>
           <li>
             <Link href="/">Home</Link>
@@ -23,7 +24,10 @@ const Navbar = () => {
           <li>How It Works</li>
           <li>Get Started</li>
         </ul>
-        <button className={displayMenu ? navStyles.ham : ""} onClick={() => setDisplayMenu(!displayMenu)}>
+        <button
+          className={displayMenu ? navStyles.white : navStyles.black}
+          onClick={() => setDisplayMenu(!displayMenu)}
+        >
           <GiHamburgerMenu />
         </button>
       </nav>
