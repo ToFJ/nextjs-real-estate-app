@@ -8,8 +8,8 @@ import startStyles from "../styles/Start.module.css";
 import { FcSearch } from "react-icons/fc";
 
 export default function Home() {
-  const { fetchData } = useContext(AppContext);
-
+  const { query } = useContext(AppContext);
+  // useRef for query
   return (
     <div>
       <Head>

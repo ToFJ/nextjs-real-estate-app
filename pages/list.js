@@ -4,9 +4,9 @@ import AppContext from "../context/context";
 
 import EstateList from "../components/EstateList";
 
-const list = ({ res }) => {
-  const { data } = useContext(AppContext);
-  console.log(data);
+const list = ({ articles }) => {
+  console.log(articles);
+  //   const { data } = useContext(AppContext);
   return (
     <div>
       <Head>
@@ -20,27 +20,12 @@ const list = ({ res }) => {
 
 export default list;
 
-export const getStaticProps = async () => {
-  const res = await fetch(
-    "https://bayut.p.rapidapi.com/auto-complete?query=abu%20dhabi&hitsPerPage=25&page=0&lang=en",
-    {
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "bayut.p.rapidapi.com",
-        "x-rapidapi-key": "7764e399d8msh8b52c7ec105f2b2p1ebac6jsnb7eee2d8c420",
-      },
-    }
-  )
-    .then(response => {
-      console.log(response);
-    })
-    .catch(err => {
-      console.error(err);
-    });
-
+export const getServerSideProps = async () => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  const articles = await res.json();
   return {
     props: {
-      res,
+      articles,
     },
   };
 };

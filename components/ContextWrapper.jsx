@@ -3,9 +3,9 @@ import { useState } from "react";
 import axios from "axios";
 
 const ContextWrapper = ({ children }) => {
-  const [data, setData] = useState([]);
+  const [query, setQuery] = useState([]);
 
-  return <AppContext.Provider value={{ data }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ query }}>{children}</AppContext.Provider>;
 };
 
 export default ContextWrapper;
