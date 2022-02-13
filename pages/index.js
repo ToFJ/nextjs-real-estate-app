@@ -28,9 +28,7 @@ export default function Home() {
             </label>
             <input type="text" name="search" placeholder="Your desired City" />
             <button>
-              <Link onClick={fetchData} href="/list">
-                Search
-              </Link>
+              <Link href="/list">Search</Link>
             </button>
           </div>
         </div>

@@ -9,7 +9,6 @@
 
 .nav ul {
   margin: 0;
-  margin-top: 0.5rem;
 }
 
 .list {
@@ -90,7 +89,7 @@
 }
 
 .black {
-  color: rgb(245, 178, 178);
+  color: rgb(0, 0, 0);
 }
 
 .logo {
