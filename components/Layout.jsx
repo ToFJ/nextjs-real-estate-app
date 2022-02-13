@@ -1,3 +1,4 @@
+import ContextWrapper from "../components/ContextWrapper";
 import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
