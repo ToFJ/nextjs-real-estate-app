@@ -7,7 +7,7 @@ import startStyles from "../styles/Start.module.css";
 import { FcSearch } from "react-icons/fc";
 
 import Hero from "../components/Hero";
-import HouseList from "../components/HouseList";
+import PropertyList from "../components/PropertyList";
 
 export default function Home() {
   const { query, setQuery } = useContext(AppContext);
@@ -77,7 +77,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {locations.length > 0 && <HouseList locations={locations} />}
+      {locations.length > 0 && <PropertyList locations={locations} />}
     </div>
   );
 }
