@@ -41,11 +41,11 @@
   padding: 0.5rem 1.5rem;
   cursor: pointer;
   transition: all 150ms ease-in-out;
+  color: white;
+  text-decoration: none;
 }
 
 .search button a {
-  color: white;
-  text-decoration: none;
 }
 
 .search button:hover {

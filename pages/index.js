@@ -1,15 +1,51 @@
 import Head from "next/head";
-import Hero from "../components/Hero";
 import { useContext, useState } from "react";
-import Link from "next/link";
 import AppContext from "../context/context";
+import axios from "axios";
 
 import startStyles from "../styles/Start.module.css";
 import { FcSearch } from "react-icons/fc";
 
+import Hero from "../components/Hero";
+import HouseList from "../components/HouseList";
+
 export default function Home() {
-  const { query } = useContext(AppContext);
-  // useRef for query
+  const { query, setQuery } = useContext(AppContext);
+  const [locations, setLocations] = useState([]);
+
+  const fetchData = searchQuery => {
+    const options = {
+      method: "GET",
+      url: "https://bayut.p.rapidapi.com/auto-complete",
+      params: { query: searchQuery, hitsPerPage: "25", page: "0", lang: "en" },
+      headers: {
+        "x-rapidapi-host": "bayut.p.rapidapi.com",
+        "x-rapidapi-key": "7764e399d8msh8b52c7ec105f2b2p1ebac6jsnb7eee2d8c420",
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data.hits);
+        locs(response.data.hits);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
+
+  const locs = array => {
+    const mapped = array.map(item => {
+      const newState = item.externalID.toString();
+      return newState;
+    });
+    const newM = mapped.join(",");
+    setLocations(newM);
+  };
+
+  console.log(locations);
+
   return (
     <div>
       <Head>
@@ -23,16 +59,25 @@ export default function Home() {
           <h1>Finding the key to your new home.</h1>
           <p>Discover real estate for sale and rent in any city you want.</p>
           <div className={startStyles.search}>
-            <label htmlFor="search">
-              <FcSearch />
-            </label>
-            <input type="text" name="search" placeholder="Your desired City" />
-            <button>
-              <Link href="/list">Search</Link>
+            <form>
+              <label htmlFor="search">
+                <FcSearch />
+              </label>
+              <input
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                type="text"
+                name="search"
+                placeholder="Your desired City"
+              />
+            </form>
+            <button onClick={() => fetchData(query)} type="submit">
+              Search
             </button>
           </div>
         </div>
       </div>
+      {locations.length > 0 && <HouseList locations={locations} />}
     </div>
   );
 }
