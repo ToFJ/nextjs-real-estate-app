@@ -20,7 +20,7 @@ export default function Home() {
       params: { query: searchQuery, hitsPerPage: "25", page: "0", lang: "en" },
       headers: {
         "x-rapidapi-host": "bayut.p.rapidapi.com",
-        "x-rapidapi-key": "7764e399d8msh8b52c7ec105f2b2p1ebac6jsnb7eee2d8c420",
+        "x-rapidapi-key": `${process.env.NEXT_PUBLIC_API_KEY}`,
       },
     };
 
